@@ -11,7 +11,7 @@ class Node{
         left = right = null;
     }
 }
-public class Main {
+public class TreeBuilder {
   public Node builder(Integer[] arr){
 
     if(arr.length == 0||arr[0]==null)return null;
@@ -36,6 +36,7 @@ public class Main {
     return root;
   }
   public void inorder(Node root){
+    if(root == null) return;
     inorder(root.left);
     System.out.println(root.data + "");
     inorder(root.right);
@@ -43,7 +44,7 @@ public class Main {
 
   public static void main(String[] args) {
     Integer[] arr = {1,2,3,4,5,6,7};
-    Main builder  = new Main();
+    TreeBuilder builder  = new TreeBuilder();
     Node root = builder.builder(arr);
     builder.inorder(root);
   }
