@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class adventofcode2020one {
     public static void main(String[] args) {
         int target = 2020;
         int[] numbers = {

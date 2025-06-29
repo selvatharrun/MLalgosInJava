@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class countvectorizer {
     public static void main(String[] args) {
         List<String> lst = new ArrayList<>();
         lst.add("I love nuggets");
