@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class adventofcode2020two {
     public static void main(String[] args) {
         String fileName = "src/main/java/test.txt"; // Update the path if needed
         List<String> lst = new ArrayList<>();
