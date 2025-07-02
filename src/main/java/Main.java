@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        
         String fileName = "src/main/java/test.txt"; // Update the path if needed
         List<String> lst = new ArrayList<>();
 
@@ -32,5 +33,6 @@ public class Main {
             }
         }
         System.out.println(totalcount);
+        
     }
 }
