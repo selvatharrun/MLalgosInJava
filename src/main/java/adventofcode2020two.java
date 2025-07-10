@@ -3,7 +3,7 @@ import java.util.*;
 
 public class adventofcode2020two {
     public static void main(String[] args) {
-        String fileName = "src/main/java/test.txt"; // Update the path if needed
+        String fileName = "src/main/java/AOC20202.txt"; // Update the path if needed
         List<String> lst = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
