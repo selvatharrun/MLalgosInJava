@@ -2,22 +2,23 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> lst = new ArrayList<>();
-        lst.add("I love nuggets");
-        lst.add("I love burger");
-        lst.add("burger is great");
-        
-        Map<String,Integer> map = new HashMap<>();
-        List<Map<String,Integer>> lst2 = new ArrayList<>();
+        String doc1 = "i love football";
+        String doc2 = "i am passionate about football";
 
-        for(String s:lst){
-            String[] words = s.split(" ");
-            for(int i = 0;i<words.length;i++){
-                map.put(words[i],map.getOrDefault(0,map.get(words[i])+1));
-            }
-            lst2.add(map);
-        }
-        System.out.println(lst2);
+        System.out.println("Jaccard Similarity: " + jcsim(doc1, doc2));
+    }
+
+    public static double jcsim(String s1, String s2) {
+        Set<String> set1 = new HashSet<>(Arrays.asList(s1.split(" ")));
+        Set<String> set2 = new HashSet<>(Arrays.asList(s2.split(" ")));
+
+        Set<String> intersection = new HashSet<>(set1);
+        intersection.retainAll(set2); // keep only common elements
+
+        Set<String> union = new HashSet<>(set1);
+        union.addAll(set2); // union of both sets
+        
+
+        return (double) intersection.size() / union.size();
     }
 }
-
