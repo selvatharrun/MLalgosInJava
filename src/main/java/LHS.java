@@ -10,18 +10,24 @@ public class LHS{
         System.out.println(jcsim(doc1,doc2));
     }
     
-    public void boolean jcsim(String s1, String s2){
-        Set<String> set1 = new HashSet<>();
-        Set<String> set2 = new HashSet<>();
+    public static boolean jcsim(String s1, String s2){
+        Set<Character> set1 = new HashSet<>();
+        Set<Character> set2 = new HashSet<>();
 
         for(Character s: s1.toCharArray()){
-            set.add(s);
+            set1.add(s);
         }
         for(Character m: s2.toCharArray()){
-            if(!set.contains(m)){
+            set2.add(m);
+        }
+        
+        // Check if all characters in s2 are present in s1
+        for(Character m: s2.toCharArray()){
+            if(!set1.contains(m)){
                 return false;
             }
         }
+        return true;
     }
 
     
