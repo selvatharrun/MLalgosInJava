@@ -1,24 +1,55 @@
 import java.util.*;
 
-public class Main {
-    public static void main(String[] args) {
-        String doc1 = "i love football";
-        String doc2 = "i am passionate about football";
+class UnionFind{
+    int[] parent; //returns its parent; 
+    int[] rank;    //returns the estimate height;
 
-        System.out.println("Jaccard Similarity: " + jcsim(doc1, doc2));
+    public void unionfind(int size){
+        parent = new int[size];
+        rank = new int[size];
+
+        //to initialize the parents of the elements are themselves, as they are all disjoint sets on their own to begin with.
+        for(int i =0; i<size;i++){
+            parent[i] = i;
+        }
     }
 
-    public static double jcsim(String s1, String s2) {
-        Set<String> set1 = new HashSet<>(Arrays.asList(s1.split(" ")));
-        Set<String> set2 = new HashSet<>(Arrays.asList(s2.split(" ")));
+    //returns the root of the node.
+    public int find(int x){
+        if(parent[x] != x){
+            parent[x] = find(x);
+        }
+        return parent[x];
+    }
 
-        Set<String> intersection = new HashSet<>(set1);
-        intersection.retainAll(set2); // keep only common elements
+    public void union(int x, int y){
+        int rootx = find(x);
+        int rooty = find(y);
+        //if in case both the roots are equal, then they belong to the same set, no union needed.
+        if(rootx==rooty)return;
 
-        Set<String> union = new HashSet<>(set1);
-        union.addAll(set2); // union of both sets
+        // 2 of these are for if either of their ranks are lesser.
+        else if(rank[rootx]<rank[rooty]){ 
+            parent[rootx] = rooty;
+        }
+        else if(rank[rooty] < rank[rootx]){
+            parent[rooty] = rootx;
+        }
+        //this is if both their ranks are equal.
+        else{
+            parent[rooty] = rootx;
+            rank[rootx]++;
+        }
+    }
+
+    public boolean connected(int x, int y){
+        return find(x) == find(y);
+    }
+    
+}
+public class Main {
+
+    public static void main(String[] args) {
         
-
-        return (double) intersection.size() / union.size();
     }
 }
