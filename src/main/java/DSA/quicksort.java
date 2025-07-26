@@ -1,4 +1,4 @@
-public class Main {
+public class quicksort {
     public void swap (int[] lst , int a, int b){
         int temp = lst[b];
         lst[b] = lst[a];
@@ -24,24 +24,24 @@ public class Main {
                 left++;
                 right--;
             } 
-            
+
         }
         swap(lst,low,right);//pivot to be swapped with the right. 
         return right; //returns pivotindex as the last swap must be with the 
     }
-    
-    public int[] quicksort(int[]lst ,int low, int high){
+
+    public int[] qk(int[]lst ,int low, int high){
         if(low<high){
             int pi = pivotIndex(lst,low,high);
-            quicksort(lst,pi+1,high); //sorting right half.
-            quicksort(lst,low,pi-1); //sorting left half.
+            qk(lst,pi+1,high); //sorting right half.
+            qk(lst,low,pi-1); //sorting left half.
         }
         return lst;
     }
     public static void main(String[] args) {
         int[] lst = {1,2,43,98,35,534,6,352,3,5};
-        Main obj = new Main();
-        lst = obj.quicksort(lst,0,lst.length-1);
+        quicksort obj = new quicksort();
+        lst = obj.qk(lst,0,lst.length-1);
         for(int i:lst){
             System.out.println(i);
         }
