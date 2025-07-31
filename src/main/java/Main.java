@@ -1,50 +1,11 @@
-public class Main {
-    public void swap (int[] lst , int a, int b){
-        int temp = lst[b];
-        lst[b] = lst[a];
-        lst[a]= temp;
-    }
-
-    public int pivotIndex(int[] lst, int low, int high){
-        int pivot = lst[low];
-        int left = low+1;
-        int right = high;
-
-        while(left <= right){
-
-            while(left<=right && lst[left]< pivot){
-                left++;
-            }
-            while(left<=right && lst[right]>pivot){
-                right--;
-            }
-
-            if(left<right){
-                swap(lst,left,right);
-                left++;
-                right--;
-            } 
-            
-        }
-        swap(lst,low,right);//pivot to be swapped with the right. 
-        return right; //returns pivotindex as the last swap must be with the 
-    }
-    
-    public int[] quicksort(int[]lst ,int low, int high){
-        if(low<high){
-            int pi = pivotIndex(lst,low,high);
-            quicksort(lst,pi+1,high); //sorting right half.
-            quicksort(lst,low,pi-1); //sorting left half.
-        }
-        return lst;
-    }
+class first {
     public static void main(String[] args) {
-        int[] lst = {1,2,43,98,35,534,6,352,3,5};
-        Main obj = new Main();
-        lst = obj.quicksort(lst,0,lst.length-1);
-        for(int i:lst){
-            System.out.println(i);
-        }
+        System.out.println("yes");
     }
+}
 
+class second {
+    public static void main(String[] args) {
+        System.out.println("YES");
+    }
 }
