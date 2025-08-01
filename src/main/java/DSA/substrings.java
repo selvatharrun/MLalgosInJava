@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class substrings {
     Set<List<Character>> mainlst = new HashSet<>();
 
     public void backtrack(char[] lst, int index, List<Character> path) {
@@ -17,8 +17,9 @@ public class Main {
         String a = "abcd";
         char[] ch = a.toCharArray();
 
-        Main obj = new Main();
+        substrings obj = new substrings();
         obj.backtrack(ch, 0, new ArrayList<>());
+        
 
         // Print the result
         for (List<Character> sub : obj.mainlst) {
