@@ -78,3 +78,6 @@ args = "javac -classpath .:target/dependency/* -d . $(find . -type f -name '*.ja
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "java -classpath .:target/dependency/* Main"
+
+[agent]
+expertMode = true

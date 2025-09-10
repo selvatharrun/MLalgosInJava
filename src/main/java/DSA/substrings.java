@@ -1,29 +1,29 @@
-import java.util.*;
+// import java.util.*;
 
-public class substrings {
-    Set<List<Character>> mainlst = new HashSet<>();
+// public class substrings {
+//     Set<List<Character>> mainlst = new HashSet<>();
 
-    public void backtrack(char[] lst, int index, List<Character> path) {
-        mainlst.add(new ArrayList<>(path));  // Add every unique path
+//     public void backtrack(char[] lst, int index, List<Character> path) {
+//         mainlst.add(new ArrayList<>(path));  // Add every unique path
 
-        for (int i = index; i < lst.length; i++) {
-            path.add(lst[i]);
-            backtrack(lst, i + 1, path);
-            path.remove(path.size() - 1); // backtrack
-        }
-    }
+//         for (int i = index; i < lst.length; i++) {
+//             path.add(lst[i]);
+//             backtrack(lst, i + 1, path);
+//             path.remove(path.size() - 1); // backtrack
+//         }
+//     }
 
-    public static void main(String[] args) {
-        String a = "abcd";
-        char[] ch = a.toCharArray();
+//     public static void main(String[] args) {
+//         String a = "abcd";
+//         char[] ch = a.toCharArray();
 
-        substrings obj = new substrings();
-        obj.backtrack(ch, 0, new ArrayList<>());
+//         substrings obj = new substrings();
+//         obj.backtrack(ch, 0, new ArrayList<>());
         
 
-        // Print the result
-        for (List<Character> sub : obj.mainlst) {
-            System.out.println(sub);
-        }
-    }
-}
+//         // Print the result
+//         for (List<Character> sub : obj.mainlst) {
+//             System.out.println(sub);
+//         }
+//     }
+// }
