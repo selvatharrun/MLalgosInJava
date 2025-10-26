@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LHS{
+public class LSH{
     public static void main(String[] args){
         String doc1 = "i love football";
         String doc2 = "i am passionate about football";
